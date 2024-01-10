@@ -1,0 +1,6 @@
+USE sakila;
+
+SELECT *
+FROM actor
+LIMIT 5, 10 -- Lista os 10 primeiros, depois dos 5, ou seja, so mostra depois dos 5 primeiros atores.
+LIMIT 99, 10 -- Pula 99, e mostra os proximos 10 registros.

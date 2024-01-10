@@ -1,0 +1,5 @@
+USE sakila;
+
+SELECT *
+FROM address
+WHERE address2 IS NULL -- Lista todos os endereços que não foram passados como 2ª residencia.

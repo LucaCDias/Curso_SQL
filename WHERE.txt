@@ -1,0 +1,7 @@
+USE sakila;
+
+SELECT actor_id, first_name 
+FROM actor
+WHERE actor_id <= 10
+-- ORDER BY last_name;
+

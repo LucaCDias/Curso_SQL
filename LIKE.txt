@@ -1,0 +1,7 @@
+USE sakila;
+
+SELECT * FROM address
+-- WHERE district LIKE "A%" -- O nome é apenas A
+WHERE district LIKE "A%" -- Começa com a letra A
+-- WHERE district LIKE "_A_" -- Tem A na palavra, em qualquer posição
+-- WHERE district LIKE "%A" -- Se A é a última letra do nome

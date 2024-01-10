@@ -1,0 +1,9 @@
+USE sakila;
+
+SELECT * FROM actor
+-- WHERE first_name REGEXP 'a' -- Todo nome que tenha letra A
+-- WHERE first_name REGEXP '^a' -- Todo nome que comece com a letra A
+-- WHERE first_name REGEXP '^a|^d' -- Todo nome que comece com a letra A e que comece com D
+-- WHERE first_name REGEXP '[g]a' -- Filtra os nomes que tenham GA
+-- WHERE first_name REGEXP '[ge]a' -- Nomes que tenham GA, depois nomes que tenham EA (por exemplo: Gary, Sean)
+WHERE first_name REGEXP '^[gcr]a' -- Nomes que iniciam em Ga, depois iniciam em Ca, Ra, etc.
