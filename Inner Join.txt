@@ -1,0 +1,6 @@
+USE sakila;
+
+SELECT *
+FROM customer
+JOIN payment ON customer.customer_id = payment.payment_id -- Coloca junto a tabela customer com a tabela payment,
+-- onde o id do cliente deve ser o mesmo do id de pagamento; ou seja, os pagamentos relacionados a cada consumidor.

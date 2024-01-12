@@ -1,0 +1,11 @@
+USE sakila;
+
+INSERT INTO country
+VALUES
+	(DEFAULT, 'Brasil', '2015-02-15 13:00:21'); -- Ponto e vírgula, que marca a conclusão de uma instrução SQL.
+
+INSERT INTO city
+VALUES
+	(DEFAULT, 'Sao Paulo', last_insert_id(), '2015-02-15 13:00:21')
+
+    

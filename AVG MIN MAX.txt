@@ -1,0 +1,7 @@
+USE sakila;
+
+SELECT AVG(amount) AS media,
+		MAX(amount) AS max, 
+        MIN(amount) AS min
+FROM payment
+WHERE amount > 0 -- Para que o pagamento min nao seja 0

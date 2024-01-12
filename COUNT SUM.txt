@@ -1,0 +1,9 @@
+USE sakila;
+
+SELECT AVG(amount) AS media,
+		MAX(amount) AS max, 
+        MIN(amount) AS min,
+        SUM(amount) as 'Total de vendas',
+        COUNT(amount) as 'Numero de vendas' -- Não conta NULL VALUES (valores em branco)
+        FROM payment
+WHERE amount > 0 AND staff_id = 1 -- Para que o pagamento min nao seja 0

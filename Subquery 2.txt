@@ -1,0 +1,14 @@
+USE sakila;
+
+SELECT *
+FROM payment
+WHERE amount = (
+	SELECT MAX(amount) -- Query
+	FROM payment
+	WHERE customer_id = 1)
+    
+-- Na subquery, vemos que, ao executá-la isoladamente,
+-- a maior compra do cliente 1 é de 9.9
+-- A query principal, então, seleciona todas os dados da tabela, representados
+-- pelo "*", onde o valor de compra ("amount") é igual ao valor máximo gasto
+-- pelo cliente 1 (9.99).

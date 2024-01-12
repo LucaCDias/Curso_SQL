@@ -1,0 +1,11 @@
+USE sakila;
+
+SELECT 
+    cus.customer_id AS Id,
+    cus.first_name AS Nome,
+    cus.last_name AS Sobrenome,
+    SUM(amount) AS Total
+FROM payment pay
+JOIN customer cus USING(customer_id) -- Using une as duas tabelas (customer e payment) de acordo com o customer_id
+GROUP BY customer_id
+ORDER BY total DESC;
