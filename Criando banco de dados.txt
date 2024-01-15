@@ -1,0 +1,38 @@
+USE carros;
+
+
+-- Drop tables
+DROP TABLE IF EXISTS inventario;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS marcas;
+
+
+
+CREATE TABLE marcas (
+	id INT NOT NULL AUTO_INCREMENT,
+    nome_marca VARCHAR(255) NOT NULL, -- 255 é o máx de caracteres que o nome pode ter.
+    -- origem_marca VARCHAR(255) NOT NULL -- se eu crio a coluna "origem_marca" após já ter criado as outras colunas, eu posso
+    -- estar apagando os dados todos que ja existem na tabela. Para criar a coluna na tabela, usaremos o ALTER TABLE.
+    PRIMARY KEY (id)
+    );
+    
+ALTER TABLE marcas ADD origem VARCHAR(255) NOT NULL;
+
+CREATE TABLE inventario (
+	id INT NOT NULL AUTO_INCREMENT,
+    modelo VARCHAR(255) NOT NULL,
+    transmissao VARCHAR(255) NOT NULL,
+    motor VARCHAR(255) NOT NULL, -- VARCHAR, e não INT, para evitar que nomes como "4.1" deem erros, por causa de ponto.
+    combustivel VARCHAR(255) NOT NULL,
+    marcas_id INT NOT NULL,
+	PRIMARY KEY (id),
+    FOREIGN KEY (marcas_id) REFERENCES marcas(id)
+);
+
+CREATE TABLE clientes (
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+    sobrenome VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+    )

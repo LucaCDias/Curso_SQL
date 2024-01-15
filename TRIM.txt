@@ -1,0 +1,5 @@
+-- SELECT TRIM('     CARROS  ') -- Remover espaços
+-- SELECT TRIM(BOTH 'a' FROM 'aaaaaCarros') -- Remover both os lados, com letras "a" repetidas.
+-- SELECT LOCATE('C' FROM 'Carros') -- Localiza letra "C".
+-- SELECT lcase('Carros') -- Deixa em letras minusculas.
+SELECT ucase('Carros') -- Deixa em letras maiusculas.

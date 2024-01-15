@@ -1,0 +1,2 @@
+CREATE DATABASE carros;
+-- DROP DATABASE teste; -- Exclusão database

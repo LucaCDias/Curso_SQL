@@ -1,0 +1,11 @@
+USE carros;
+
+CREATE TABLE marcas (
+	id INT NOT NULL AUTO_INCREMENT,
+    nome_marca VARCHAR(255) NOT NULL, -- 255 é o máx de caracteres que o nome pode ter.
+    -- origem_marca VARCHAR(255) NOT NULL -- se eu crio a coluna "origem_marca" após já ter criado as outras colunas, eu posso
+    -- estar apagando os dados todos que ja existem na tabela. Para criar a coluna na tabela, usaremos o ALTER TABLE.
+    PRIMARY KEY (id)
+    );
+    
+ALTER TABLE marcas ADD origem VARCHAR(255) NOT NULL

@@ -1,0 +1,60 @@
+
+USE carros;
+
+
+-- Drop tables
+DROP TABLE IF EXISTS inventario;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS marcas;
+
+
+
+CREATE TABLE marcas (
+	id INT NOT NULL AUTO_INCREMENT,
+    nome_marca VARCHAR(255) NOT NULL, -- 255 é o máx de caracteres que o nome pode ter.
+    -- origem_marca VARCHAR(255) NOT NULL -- se eu crio a coluna "origem_marca" após já ter criado as outras colunas, eu posso
+    -- estar apagando os dados todos que ja existem na tabela. Para criar a coluna na tabela, usaremos o ALTER TABLE.
+    PRIMARY KEY (id)
+    );
+    
+ALTER TABLE marcas ADD origem VARCHAR(255) NOT NULL;
+
+CREATE TABLE inventario (
+	id INT NOT NULL AUTO_INCREMENT,
+    modelo VARCHAR(255) NOT NULL,
+    transmissao VARCHAR(255) NOT NULL,
+    motor VARCHAR(255) NOT NULL, -- VARCHAR, e não INT, para evitar que nomes como "4.1" deem erros, por causa de ponto.
+    combustivel VARCHAR(255) NOT NULL,
+    marcas_id INT NOT NULL,
+	PRIMARY KEY (id),
+    FOREIGN KEY (marcas_id) REFERENCES marcas(id)
+);
+
+CREATE TABLE clientes (
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+    sobrenome VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+    );
+    
+INSERT INTO clientes (nome, sobrenome, endereco) VALUES 
+	('Andre', 'Iacono', 'Rua 1'),
+	('Maria', 'Silva', 'Avenida 2'),
+    ('Joao', 'Oliveira', 'Rua 3'),
+    ('Carla', 'Ribeiro', 'Avenida 4'),
+    ('Pedro', 'Alves', 'Rua 5'),
+    ('Ana', 'Santos', 'Avenida 6');
+    
+INSERT INTO marcas (nome_marca, origem) VALUES
+	('GM', 'Estados Unidos'),
+    ('VW', 'Alemanha'),
+    ('FIAT', 'Itália'),
+    ('FORD', 'Estados Unidos'),
+    ('HONDA', 'Japão');
+INSERT INTO inventario (modelo, transmissao, motor, combustivel, marcas_id) VALUES
+	('Cruze', 'Automática', '1.4 Turbo', 'Gasolina', 1),
+	('Golf', 'Manual', '1.8 TSI', 'Gasolina', 2),
+	('Uno', 'Manual', '1.0 Flex', 'Etanol', 3),
+	('Fiesta', 'Automática', '1.6 Flex', 'Etanol', 4),
+	('Civic', 'Automática', '2.0 Turbo', 'Gasolina', 5);

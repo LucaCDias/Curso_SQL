@@ -1,0 +1,2 @@
+SET PASSWORD FOR joao = '3333';
+SELECT * FROM mysql.user

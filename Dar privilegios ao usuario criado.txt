@@ -1,0 +1,7 @@
+-- CREATE USER luca@localhost IDENTIFIED BY '1212';
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON sakila.*
+TO luca@localhost;
+
+SHOW GRANTS FOR luca@localhost;

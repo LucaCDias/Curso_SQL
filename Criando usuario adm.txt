@@ -1,0 +1,6 @@
+GRANT ALL
+ON sakila.* -- Somente para o banco de dados sakila.
+-- ON * -- CASO QUEIRA PARA TODOS OS BANCOS DE DADOS.
+TO luca@localhost;
+
+SHOW GRANTS FOR luca@localhost;

@@ -1,0 +1,7 @@
+CREATE USER ana IDENTIFIED BY '1212'; -- SENHA 1212
+CREATE USER joao@localhost IDENTIFIED BY '1212'; -- Ana tem acesso a tudo, e joao apenas a partir do localhost.
+CREATE USER priscila@andreiacono.com -- Pri so consegue acessar o db se estiver logada nesse dominio, ou seja, se estiver trabalhando.
+-- SELECT * FROM mysql.user
+
+-- Se nao estiver criando usuarios, coloque "@localhost" no nome dele.
+
